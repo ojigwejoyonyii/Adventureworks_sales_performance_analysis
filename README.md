@@ -3,16 +3,59 @@ This project is a business intelligence solution that converts Adventure Works s
 
 ---
 
-# Project Overview
-An end-to-end Business Intelligence solution built in Power BI to track KPIs, compare regional sales performance, analyze product-level trends, and identify high-value customers for AdventureWorks, a bicycle, accessories, and apparel retailer. The project covers the full Business Intelligence lifecycle: connecting and transforming raw CSV data, building a relational (star-schema) data model, writing calculated columns and DAX measures, and designing an interactive Power BI report.
+# 💼 Project Type
 
-**Dataset coverage:** Order dates from **January 2020 – June 2022**, across **10 sales territories** in North America, Europe, and the Pacific region, **293 products** in 3 categories, and **18,148 customers**.
+|📌Category| 📖 Details |
+|---------------|-----------|
+|📊 Project Type| Data Analytics / Business Intelligence|
+|📂 Data| Adventure Works|
+|🛠️Tools| power BI, Power Query|
+|🎯 Focus| Tracking KPI's which includes profitability, regional performance, Product level trend, High value customers|
+
+### project status: In Progress
 
 ---
 
-## 🎯 Business Objectives
+## 📑 Table of Contents
 
-The client needs a single Power BI report to support data-driven decisions across sales and product teams. The core objectives includes:
+1. [📊 Project Overview](#-project-overview)
+2. [💼 Business Problem](#-business-problem)
+3. [🎯 Business Objective](#-business-objective)
+4. [🛠️ Project Scope & Tools](#-project-scope--tools)
+5. [📁 Repository Structure](#-repository-structure)
+6. [🔄 Data Workflow](#-data-workflow)
+7. [📊 Data visualization](#-data-visualization)
+8. [🗂️ Data Model & Schema](#️-data-model--schema)
+9. [💡 Key Insights](#-key-insights)
+10. [📌 Recommendations](#-recommendations)
+11. [⚠️ Assumptions & Limitations](#️-assumptions--limitations)
+12. [👤 Author](#-author)
+
+---
+
+# 📊 Project Overview
+
+This project is an end-to-end Business Intelligence solution built in Power BI to track KPIs, compare regional sales performance, analyze product-level trends, and identify high-value customers for AdventureWorks, a bicycle, accessories, and apparel retailer. It covers the full BI lifecycle: connecting and transforming raw CSV data, building a relational (star-schema) data model, writing calculated columns and DAX measures, and designing an interactive Power BI report.
+
+**Dataset coverage:** Order dates from **January 2020 – June 2022**, across **10 sales territories** in North America, Europe, and the Pacific region, **293 products** in 3 categories, and **18,148 customers**.
+
+The analysis shows that revenue grew from 2020 to 2021 before declining in 2022, though this drop should be read in context: the 2022 data covers only six months, while 2020 and 2021 contain full-year data, so the decline reflects the shorter reporting window rather than a confirmed deterioration in sales. At the product level, the Bikes category generated the largest share of revenue across the combined three-year period, making it the business's primary revenue driver. Overall, AdventureWorks achieved a strong profit margin of 41.7% across the full 2020 to 2022 period.
+
+---
+
+# 💼 Business Problem
+
+Adventure Works generates sales data across multiple years, products, customers, and regions, but raw sales data alone does not provide a clear view of overall business performance.
+
+The business needs to understand its revenue and profitability trends, identify its major revenue-generating products, and evaluate customer and regional performance to determine where the business is performing well and where opportunities for improvement may exist.
+
+Without a structured analysis of these areas, it may be difficult for decision-makers to identify important performance trends and make informed, data-driven business decisions.
+
+---
+
+# 🎯 Business Objective
+
+The project aims at creating  Power BI report to support data-driven decisions across sales and product teams. The core objectives includes:
 
 - **Track KPIs** — Consolidate Order Quantity, Revenue, Cost, Profit, and Return Quantity into a single live report.
 - **Compare regional performance** — Break down revenue and returns by sales territory, region, and continent to spot over- and under-performing markets.
@@ -22,7 +65,19 @@ The client needs a single Power BI report to support data-driven decisions acros
 
 ---
 
-## 🛠️ Tools & Technologies
+# 🛠️ Project Scoop & Tools
+
+| Area | In Scope | Out of Scope | Granularity |
+|---|---|---|---|
+| Sales Performance | Revenue, sales trends | Sales forecasting | Year / Month/ Product |
+| Profitability | Profit and profit margin analysis | Detailed financial statement analysis | Year  |
+| Product Performance | Product category and sub category revenue performance | Product development and production analysis | Product / Category/ Sub category |
+| Customer Performance | Customer purchase and sales contribution | Customer satisfaction and demographics | Customer / Region/ Year |
+| Regional Performance | Sales and profit across available regions | External market and competitor analysis | Region / Territory |
+| Data Preparation | Data cleaning, transformation and validation | Changes to source systems | Row / Column / Table |
+| Visualization & KPIs | Interactive dashboards and key performance metrics | Enterprise BI deployment | Dashboard / KPI |
+
+
 
 | Category | Tool |
 |---|---|
@@ -35,32 +90,61 @@ The client needs a single Power BI report to support data-driven decisions acros
 
 ---
 
-## 🧹 Data Cleaning & Transformation
+# 📁 Repository structure 
 
-Eight source CSV files were connected and shaped in **Power Query** before being loaded into the data model:
-
-| Source File | Loads To |
-|---|---|
-| `AdventureWorks Customer Lookup.csv` | Customer |
-| `AdventureWorks Product Lookup.csv` | Product |
-| `AdventureWorks Product Categories Lookup.csv` | Product Category |
-| `AdventureWorks Product Subcategories Lookup.csv` | Product Subcategories |
-| `AdventureWorks Territory Lookup.csv` | Territory |
-| `AdventureWorks Returns Data.csv` | Returns Data |
-| `AdventureWorks_Calendar_Lookup.csv` | Calendar |
-| `Sales_2020-2022.csv` | Sales_2020-2022 |
-
-Key transformation steps applied per table:
-
-- **Promoted headers & set data types** on every table (keys as `Int64`, dates as `Date`, text fields typed explicitly).
-- **Customer table** — removed the unused `Prefix` column, merged `FirstName` + `LastName` into a proper-cased `FullName` column, and recoded abbreviated values into readable labels (`HomeOwner`: N/Y → No/Yes; `MaritalStatus`: M/S → Married/Single; `Gender`: M/F → Male/Female). Filtered out rows with a blank `FirstName`.
-- **Product table** — rounded `ProductCost` and `ProductPrice` to 2 decimal places after type conversion.
-- **Returns Data / Territory / Product Category / Product Subcategories / Calendar** — straightforward header promotion and type correction to prepare each as a clean dimension table.
-- **Sales_2020-2022** — typed as the central fact table (order/stock dates, product, customer, and territory keys, order quantity), with `Revenue` and `Cost` deliberately **not** included in the source file — these are derived in the data model (see below) rather than the raw data, keeping the fact table lean and the pricing logic centralized.
+```
+Adventure-Works-Sales-Analysis/
+│
+├── 📂 Data/
+│   ├── 📂 Cleaned Data/
+│   └── 📂 Uncleaned Data/
+│
+├── 📂 Query & Formulas/
+│   ├── 📂 EDA Formulas/
+│   └── 📂 Transformation & Metric Formulas/
+│
+├── 📂 Report/
+│   ├── 📂 Documentation/
+│   └── 📂 Power BI File/
+│
+├── 📂 Visual/
+│   ├── 📂 Slicers Images/
+│   └── 📂 Dashboard Images/
+│
+└── 📄 README.md
 
 ---
 
-## 🔍 Data Analysis
+```
+# Data Workflow
+
+📥 **Data Source**  
+Online CSV Dataset  
+🔗 Source link: *[Insert link here]*  
+⬇️  
+📂 **Data Ingestion**  
+Connected the CSV files to Power BI  
+⬇️  
+🧹 **Data Cleaning**  
+• Removed irrelevant columns such as the Prefix column  
+• Merged First Name and Last Name columns  
+• Merged the 2020, 2021 and 2022 Sales tables  
+⬇️  
+🔄 **Data Transformation**  
+• Created calculated columns such as Revenue and Cost  
+• Applied statistical/formula-based calculations in Power BI  
+⬇️  
+📊 **Data Analysis**  
+• Created charts and slicers  
+• Applied visual, statistical and query-based analysis  
+• Developed KPIs and performance metrics  
+⬇️  
+📈 **Output**  
+Interactive Power BI Dashboard
+
+---
+
+# 🗂️ Data Model & Schema
 
 A **star-schema relational model** connects the `Sales_2020-2022` fact table (56,046 rows) to six dimension tables via single-direction, many-to-one relationships:
 
@@ -92,7 +176,7 @@ Time intelligence (Year, Quarter, Month, Day breakdowns) is handled through Powe
 
 ---
 
-##  📊 Dashboard & Visualizations
+#  📊 Dashboard & Visualizations
 
 The report is a single, densely-packed analysis page combining KPI cards with comparison and trend charts:
 
@@ -109,7 +193,7 @@ The report is a single, densely-packed analysis page combining KPI cards with co
 
 ---
 
-## 💡 Key Insights
+# 💡 Key Insights
 
 Based on the current dataset (Jan 2020 – Jun 2022):
 
@@ -122,20 +206,15 @@ Based on the current dataset (Jan 2020 – Jun 2022):
 
 ---
 
-## 🎯 Recommendations
+# 📌 Recommendations
 
 - **Double down on Bikes, but de-risk the category concentration.** With ~95% of revenue from one category, evaluate whether Accessories and Clothing are being under-marketed (e.g., bundled add-on offers at the point of bike sale) to diversify revenue.
 - **Prioritize the top 10% of customers** identified in the model with a formal retention/loyalty program, given they already drive ~40% of revenue — losing even a few of these accounts has outsized impact.
 - **Investigate the near-zero-revenue territories** (Southeast, Northeast, Central) — confirm whether this reflects genuinely limited market activity or a data/territory-mapping issue, since it's an outlier next to Australia and Southwest.
 - **Watch the 2021→2022 plateau closely** once the full 2022 year is available — confirm whether growth has genuinely stalled or the flat comparison is purely a partial-year artifact.
 
----
 
-## 📂  Repository Structure
-- Data
-- Documentation
-- Images
-- Power BI
+
  
 
 
