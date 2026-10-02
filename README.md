@@ -64,8 +64,7 @@ The project aims at creating  Power BI report to support data-driven decisions a
 - **Enable self-service analysis** — Deliver an interactive, filterable report rather than static exports.
 
 ---
-
-# 🛠️ Project Scoop & Tools
+# 🛠️ Project Scope & Tools
 
 | Area | In Scope | Out of Scope | Granularity |
 |---|---|---|---|
@@ -116,7 +115,7 @@ Adventure-Works-Sales-Analysis/
 ---
 
 ```
-# Data Workflow
+# 🔄 Data Workflow
 
 📥 **Data Source**  
 Online CSV Dataset  
@@ -176,7 +175,7 @@ Time intelligence (Year, Quarter, Month, Day breakdowns) is handled through Powe
 
 ---
 
-#  📊 Dashboard & Visualizations
+#  📊 Data Visualization
 
 The report is a single, densely-packed analysis page combining KPI cards with comparison and trend charts:
 
