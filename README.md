@@ -64,6 +64,7 @@ The project aims at creating  Power BI report to support data-driven decisions a
 - **Enable self-service analysis** — Deliver an interactive, filterable report rather than static exports.
 
 ---
+
 # 🛠️ Project Scope & Tools
 
 | Area | In Scope | Out of Scope | Granularity |
@@ -91,7 +92,7 @@ The project aims at creating  Power BI report to support data-driven decisions a
 
 # 📁 Repository structure 
 
-```
+``` text
 Adventure-Works-Sales-Analysis/
 │
 ├── 📂 Data/
@@ -171,13 +172,17 @@ Cost    = 'Sales_2020-2022'[OrderQuantity] * RELATED('Product'[ProductCost])
 PROFIT = SUM('Sales_2020-2022'[Revenue]) - SUM('Sales_2020-2022'[Cost])
 ```
 
+```dax
+PROFIT MARGIN = `Sales_2020-2022`[PROFIT] / SUM(Sales_2020-2022`[REVENUE])
+```
+
 Time intelligence (Year, Quarter, Month, Day breakdowns) is handled through Power BI's built-in **Date Hierarchy** on the Calendar and order-date fields, which the column charts and area chart use to trend revenue and profit by year and month.
 
 ---
 
 #  📊 Data Visualization
 
-The report is a single, densely-packed analysis page combining KPI cards with comparison and trend charts:
+The report is a double, densely-packed analysis page combining KPI cards with comparison and trend charts:
 
 - **KPI Cards** — Total Order Quantity, Total Revenue, Total Return Quantity, Total Cost, and Total Profit at a glance.
 - **Revenue by Year** (column chart) — annual revenue trend, 2020–2022.
