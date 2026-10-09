@@ -40,7 +40,7 @@ This project is an end-to-end Business Intelligence solution built in Power BI t
 
 **Dataset coverage:** Order dates from **January 2020 – June 2022**, across **10 sales territories** in North America, Europe, and the Pacific region, **293 products** in 3 categories, and **18,148 customers**.
 
-The analysis shows that revenue grew from 2020 to 2021 before declining in 2022, though this drop should be read in context: the 2022 data covers only six months, while 2020 and 2021 contain full-year data, so the decline reflects the shorter reporting window rather than a confirmed deterioration in sales. At the product level, the Bikes category generated the largest share of revenue across the combined three-year period, making it the business's primary revenue driver. Overall, AdventureWorks achieved a strong profit margin of 41.7% across the full 2020 to 2022 period.
+The analysis shows that revenue grew from 2020 to 2021 before declining in 2022, though this drop should be read in context: the 2022 data covers only six months, while 2020 and 2021 contain full-year data, so the decline reflects the shorter reporting window rather than a confirmed deterioration in sales. At the product level, the Bikes category generated the largest share of revenue across the combined three-year period, making it the business's primary revenue driver. Overall, AdventureWorks achieved a strong profit margin of 41.97% across the full 2020 to 2022 period.
 
 ---
 
