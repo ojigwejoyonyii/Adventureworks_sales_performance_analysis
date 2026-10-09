@@ -17,12 +17,12 @@ This project is a business intelligence solution that converts Adventure Works s
 
 ---
 
-## 📑 Table of Contents
+# 📑 Table of Contents
 
 1. [📊 Project Overview](#-project-overview)
 2. [💼 Business Problem](#-business-problem)
 3. [🎯 Business Objective](#-business-objective)
-4. [🛠️ Project Scope & Tools](#-project-scope--tools)
+4. [🛠️ Project Scope & Tools](#️-project-scope--tools)
 5. [📁 Repository Structure](#-repository-structure)
 6. [🔄 Data Workflow](#-data-workflow)
 7. [📊 Data visualization](#-data-visualization)
@@ -194,7 +194,8 @@ The report is a double, densely-packed analysis page combining KPI cards with co
 - **Returns by Product Category** (column chart) — return volume compared against sales by category.
 - **Profit by Year** (column chart) — annual profit trend alongside the revenue trend.
 
-*(Add a screenshot of the published report page here.)*
+<img width="852" height="479" alt="image" src="https://github.com/user-attachments/assets/48791226-41c3-4aa0-9594-cb577ffd34e7" />
+
 
 ---
 
