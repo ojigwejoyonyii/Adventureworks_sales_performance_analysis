@@ -7,12 +7,13 @@ This project is a business intelligence solution that converts Adventure Works s
 
 |📌Category| 📖 Details |
 |---------------|-----------|
-|📊 Project Type| Data Analytics / Business Intelligence|
-|📂 Data| Adventure Works|
-|🛠️Tools| power BI, Power Query|
-|🎯 Focus| Tracking KPI's which includes profitability, regional performance, Product level trend, High value customers|
+|Project Type| Data Analytics / Business Intelligence|
+|Data| Adventure Works|
+|Tools| power BI, Power Query|
+|Focus| Tracking KPI's which includes profitability, regional performance, Product level trend, High value customers|
 
-### project status: In Progress
+
+##### project status: In Progress
 
 ---
 
