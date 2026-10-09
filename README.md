@@ -219,9 +219,49 @@ Based on the current dataset (Jan 2020 – Jun 2022):
 - **Investigate the near-zero-revenue territories** (Southeast, Northeast, Central) — confirm whether this reflects genuinely limited market activity or a data/territory-mapping issue, since it's an outlier next to Australia and Southwest.
 - **Watch the 2021→2022 plateau closely** once the full 2022 year is available — confirm whether growth has genuinely stalled or the flat comparison is purely a partial-year artifact.
 
+---
+
+# ⚠️ Assumptions & Limitations
+
+Although this project provides valuable insights into Adventure Works' sales performance, revenue trends, product performance, and profitability, certain limitations were encountered during the analysis. These limitations relate to the availability and coverage of the dataset, the scope of the analytical procedures performed, and the assumptions adopted during data preparation and visualization in Power BI. Identifying these constraints is important to ensure that the findings are interpreted appropriately and that the conclusions drawn remain within the boundaries of the available data.
+
+**1. Unequal Reporting Periods**
+
+The dataset covers three financial years, from 2020 to 2022. However, the 2022 data covers only the first six months of the year, while 2020 and 2021 contain full-year records. This limits the direct comparability of annual revenue totals and may contribute to the apparent decline in revenue in 2022. Therefore, the findings should be interpreted with consideration for the difference in reporting periods.
+
+**2. Unnecessary Data Table Separation and Model Complexity**
+
+The dataset was structured across multiple separate tables, some of which could potentially have been consolidated or reorganized to simplify the data model. For instance, product information was distributed across separate Product, Product Category, and Product Subcategory tables, while sales records for 2020, 2021, and 2022 were maintained in three separate tables. This structure increased the complexity of data preparation and modelling in Power BI, requiring additional steps to integrate related information and establish the necessary relationships. Although the tables could be connected to facilitate analysis, a more streamlined structure, particularly a consolidated sales table and a well-organized product dimension, could have simplified the model and improved its maintainability.
+
+**3. Dependence on Available Data**
+
+The analysis was limited to the variables and information contained in the dataset provided for the project. Consequently, certain factors that could influence sales performance, such as marketing expenditure, competitor activities, promotional campaigns, and broader economic conditions, could not be fully investigated where the relevant data was unavailable. The findings therefore reflect patterns observed within the available dataset rather than a complete assessment of all factors influencing business performance.
+
+**4. Scope of the Analysis**
+
+The project primarily focuses on historical sales performance, revenue trends, product category performance, regional comparisons, and profitability metrics using Power BI visualizations and analytical measures. Although these methods help identify patterns and changes in performance, they do not independently establish the underlying causes of those changes. Further investigation using additional business data and analytical techniques would be required to determine the factors driving the observed trends.
+
+These limitations should be considered when interpreting the findings and recommendations presented in this report. Future analysis could benefit from complete reporting periods, a more streamlined data model, and additional business variables to support deeper investigation and more comprehensive decision-making.
+
+---
+
+# 👤 Author
+
+**Author:** Ojigwe Joy Onyinye
+
+**Role:** Data Analyst
+
+**Project:** Adventure Works Sales Performance Analysis
+
+This project was conducted to evaluate Adventure Works' sales performance and generate actionable insights to support data-driven business decision-making. As the analyst responsible for the project, I carried out data preparation and transformation, developed the data model, performed exploratory and descriptive analysis, and designed interactive dashboards using Microsoft Power BI.
+
+The analysis focused on revenue trends, product category performance, regional sales contributions, and profitability. Through the application of data modelling, analytical measures, and interactive visualizations, the project translates raw sales data into meaningful business insights, highlights key performance trends, and provides recommendations to support strategic planning and performance improvement.
+
+**Technical Tools:** Microsoft Power BI
+
+**GitHub:** https://github.com/ojigwejoyonyii/Adventureworks_sales_performance_analysis
 
 
- 
 
 
 
