@@ -167,25 +167,48 @@ PROFIT = SUM('Sales_2020-2022'[Revenue]) - SUM('Sales_2020-2022'[Cost])
 PROFIT MARGIN = `Sales_2020-2022`[PROFIT] / SUM(Sales_2020-2022`[REVENUE])
 ```
 
+```dax
+Previous Year Revenue =
+CALCULATE([Total Revenue], PREVIOUSYEAR('Calendar'[Date]))
+```
+
+```dax
+YoY Revenue Growth Rate =
+VAR CurrentYearRev = [Total Revenue]
+VAR PrevYearRev = [Previous Year Revenue]
+RETURN
+    DIVIDE(CurrentYearRev - PrevYearRev, PrevYearRev)
+```
 Time intelligence (Year, Quarter, Month, Day breakdowns) is handled through Power BI's built-in **Date Hierarchy** on the Calendar and order-date fields, which the column charts and area chart use to trend revenue and profit by year and month.
 
 ---
 
 #  📊 Data Visualization
 
-The report is a double, densely-packed analysis page combining KPI cards with comparison and trend charts:
+A two-page interactive Power BI report (1920 × 1080) consolidates the findings. Page 1 is the sales and profit overview and Page 2 covers profitability, growth, customers, returns and order type.
+Page 1 – Sales Overview
 
-- **KPI Cards** — Total Order Quantity, Total Revenue, Total Return Quantity, Total Cost, and Total Profit at a glance.
-- **Revenue by Year** (column chart) — annual revenue trend, 2020–2022.
-- **Revenue Trend by Month** (area chart) — monthly revenue seasonality across the full date range.
-- **Revenue by Product Category** (column chart) — Bikes vs. Accessories vs. Clothing.
-- **Revenue by Product Subcategory** (column chart) — subcategory-level breakdown within categories.
-- **Revenue by Region** (column chart) — territory-level comparison across North America, Europe, and the Pacific.
-- **Returns by Product Category** (column chart) — return volume compared against sales by category.
-- **Profit by Year** (column chart) — annual profit trend alongside the revenue trend.
+- **KPI cards:** Total Revenue, Quantity Ordered, Quantity Returned, Total Cost and Profit.
 
-<img width="852" height="479" alt="image" src="https://github.com/user-attachments/assets/48791226-41c3-4aa0-9594-cb577ffd34e7" />
+- **Charts:** Revenue by Year (area), Revenue by Month (area), Profit per Year (line), Revenue by Region (column), Revenue by Product (column, category to subcategory).
 
+- **Slicers:** Year, Product Subcategory and Region.
+
+![dashboard 1](https://github.com/ojigwejoyonyii/Adventureworks_sales_performance_analysis/blob/main/Image/Readme%20Image/image10.png)
+
+Page 2 – Profitability, Growth and Returns
+
+- **KPI cards:** Profit Margin, order count and product count.
+
+- **Tables and matrix:** Profit Margin by Year, Year on Year Revenue Growth, and Order Type.
+
+- **Charts:** Top Performing Customers (bar) and Products Returned by Category (column).
+
+- **Slicers:** Year and Region.
+
+![dashboard 2](https://github.com/ojigwejoyonyii/Adventureworks_sales_performance_analysis/blob/main/Image/DASHBOARD%202.PNG)
+
+The slicers filter every visual on their page through the model relationships, so users can answer questions that are not obvious from the static charts, for example the revenue of one subcategory in one region in one year.
 
 ---
 
