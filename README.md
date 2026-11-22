@@ -1,3 +1,5 @@
+![cover page](https://github.com/ojigwejoyonyii/Adventureworks_sales_performance_analysis/blob/main/Image/Readme%20Image/group-friends-out-bicycling-together.jpg)
+
 # 🚴‍♀️ AdventureWorks Sales Performance Analysis
 This project is a business intelligence solution that converts Adventure Works sales data into interactive dashboards for exploring sales trends, profitability, customers, products, and regional performances amongst other relevant key performance indicators. 
 
