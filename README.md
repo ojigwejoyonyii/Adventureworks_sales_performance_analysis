@@ -93,26 +93,16 @@ The project aims at creating  Power BI report to support data-driven decisions a
 
 # 📁 Repository structure 
 
-``` text
-Adventure-Works-Sales-Analysis/
-│
-├── 📂 Data/
-│   ├── 📂 Cleaned Data/
-│   └── 📂 Uncleaned Data/
-│
-├── 📂 Query & Formulas/
-│   ├── 📂 EDA Formulas/
-│   └── 📂 Transformation & Metric Formulas/
-│
-├── 📂 Report/
-│   ├── 📂 Documentation/
-│   └── 📂 Power BI File/
-│
-├── 📂 Visual/
-│   ├── 📂 Slicers Images/
-│   └── 📂 Dashboard Images/
-│
-└── 📄 README.md
+- DATA
+
+- DOCUMENT
+
+- IMAGE
+
+- DASHBOARD
+
+- DOCUMENTATION
+
 
 ---
 
