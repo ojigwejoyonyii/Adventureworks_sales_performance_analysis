@@ -24,9 +24,9 @@ This project is a business intelligence solution that converts Adventure Works s
 3. [🎯 Business Objective](#-business-objective)
 4. [🛠️ Project Scope & Tools](#️-project-scope--tools)
 5. [📁 Repository Structure](#-repository-structure)
-6. [🔄 Data Workflow](#-data-workflow)
+6. [💫 Project Workflow](#-project-workflow)
 7. [📊 Data visualization](#-data-visualization)
-8. [🗂️ Data Model & Schema](#️-data-model--schema)
+8. [📌 Data Model & Schema](#-data-model--schema)
 9. [💡 Key Insights](#-key-insights)
 10. [📌 Recommendations](#-recommendations)
 11. [⚠️ Assumptions & Limitations](#️-assumptions--limitations)
@@ -106,38 +106,31 @@ The project aims at creating  Power BI report to support data-driven decisions a
 
 ---
 
-```
-# 🔄 Data Workflow
+# 💫 Project Workflow
 
-📥 **Data Source**  
-Online CSV Dataset  
-🔗 Source link: *[Insert link here]*  
-⬇️  
-📂 **Data Ingestion**  
-Connected the CSV files to Power BI  
-⬇️  
-🧹 **Data Cleaning**  
-• Removed irrelevant columns such as the Prefix column  
-• Merged First Name and Last Name columns  
-• Merged the 2020, 2021 and 2022 Sales tables  
-⬇️  
-🔄 **Data Transformation**  
-• Created calculated columns such as Revenue and Cost  
-• Applied statistical/formula-based calculations in Power BI  
-⬇️  
-📊 **Data Analysis**  
-• Created charts and slicers  
-• Applied visual, statistical and query-based analysis  
-• Developed KPIs and performance metrics  
-⬇️  
-📈 **Output**  
-Interactive Power BI Dashboard
+1. Data Collection
+
+2. Data Exploration (EDA)
+
+3. Data Cleaning
+
+4. Data Transformation
+
+5. Data Modelling
+
+6. Data Analysis
+
+7. Data Visualisation
+
+8. Insights and Recommendations
+
+9. Reporting and Presentation
 
 ---
 
-# 🗂️ Data Model & Schema
+# 📌 Data Model & Schema
 
-A **star-schema relational model** connects the `Sales_2020-2022` fact table (56,046 rows) to six dimension tables via single-direction, many-to-one relationships:
+A tar-schema relational model** connects the `Sales_2020-2022` fact table (56,046 rows) to six dimension tables via single-direction, many-to-one relationships:
 
 | From Table | From Column | To Table | To Column |
 |---|---|---|---|
@@ -154,6 +147,9 @@ A **star-schema relational model** connects the `Sales_2020-2022` fact table (56
 
 ```dax
 Revenue = 'Sales_2020-2022'[OrderQuantity] * RELATED('Product'[ProductPrice])
+```
+
+```dax
 Cost    = 'Sales_2020-2022'[OrderQuantity] * RELATED('Product'[ProductCost])
 ```
 
@@ -179,6 +175,7 @@ VAR PrevYearRev = [Previous Year Revenue]
 RETURN
     DIVIDE(CurrentYearRev - PrevYearRev, PrevYearRev)
 ```
+
 Time intelligence (Year, Quarter, Month, Day breakdowns) is handled through Power BI's built-in **Date Hierarchy** on the Calendar and order-date fields, which the column charts and area chart use to trend revenue and profit by year and month.
 
 ---
@@ -186,7 +183,8 @@ Time intelligence (Year, Quarter, Month, Day breakdowns) is handled through Powe
 #  📊 Data Visualization
 
 A two-page interactive Power BI report (1920 × 1080) consolidates the findings. Page 1 is the sales and profit overview and Page 2 covers profitability, growth, customers, returns and order type.
-Page 1 – Sales Overview
+
+## Page 1 – Sales Overview
 
 - **KPI cards:** Total Revenue, Quantity Ordered, Quantity Returned, Total Cost and Profit.
 
@@ -196,7 +194,7 @@ Page 1 – Sales Overview
 
 ![dashboard 1](https://github.com/ojigwejoyonyii/Adventureworks_sales_performance_analysis/blob/main/Image/Readme%20Image/image10.png)
 
-Page 2 – Profitability, Growth and Returns
+## Page 2 – Profitability, Growth and Returns
 
 - **KPI cards:** Profit Margin, order count and product count.
 
@@ -270,7 +268,7 @@ This project was conducted to evaluate Adventure Works' sales performance and ge
 
 The analysis focused on revenue trends, product category performance, regional sales contributions, and profitability. Through the application of data modelling, analytical measures, and interactive visualizations, the project translates raw sales data into meaningful business insights, highlights key performance trends, and provides recommendations to support strategic planning and performance improvement.
 
-**Technical Tools:** Microsoft Power BI
+**Technical Tools:** Microsoft Power BI, Power Query, Data Model, DAX, Slicers and interactive visuals.
 
 **GitHub:** https://github.com/ojigwejoyonyii/Adventureworks_sales_performance_analysis
 
