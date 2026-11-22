@@ -6,7 +6,6 @@
 |---|---|
 | **Analysis tool** | Microsoft Power BI Desktop (Power Query, Data Model, DAX) |
 | **Period covered** | 1 January 2020 – 30 June 2022 |
-| **Source data** | Adventure Works CSV files (sales, returns, customer, product, territory, calendar) |
 
 ## Table of Contents
 
@@ -73,6 +72,7 @@ Adventure Works records tens of thousands of order lines, but raw transactional 
 
 # 3. Project Objectives
 
+
 - Build a clean, validated and relational data model from the raw Adventure Works files.
 
 - Create DAX measures for revenue, profit, profit margin, previous-year revenue and year-on-year growth.
@@ -125,7 +125,7 @@ The model is built from eight CSV files. Six hold descriptive (dimension) data a
 
 # 6. Data Source
 
-The data was supplied as a set of Adventure Works CSV files stored in a local folder (“Adventure works raw data”). Power BI’s Power Query reads each file with the Csv.Document connector, using a comma delimiter and Windows-1252 encoding.
+The data was supplied as a set of Adventure Works CSV files stored in a local folder (“Adventure works raw data”). 
 
 | **File**                                        | **Loaded As (Table)** | **Content**                     |
 |-------------------------------------------------|-----------------------|---------------------------------|
@@ -225,9 +225,9 @@ Headline results for the full period:
 | Units returned | 1,828     | 2.17% of units sold    |
 | Order lines    | 56,046    | 25,164 distinct orders |
 
-![Dashboard KPI cards](images/media/image1.png)
+![Dashboard KPI cards](https://github.com/ojigwejoyonyii/Adventureworks_sales_performance_analysis/blob/main/Image/Readme%20Image/image1.png)
 
-![Dashboard KPI cards (continued)](images/media/image2.png)
+![Dashboard KPI cards (continued)](https://github.com/ojigwejoyonyii/Adventureworks_sales_performance_analysis/blob/main/Image/Readme%20Image/image2.png)
 
 # 10. Analysis Performed
 
@@ -243,15 +243,15 @@ Revenue and profit were compared across 2020, 2021 and 2022 using an area chart 
 
 2022 contains only six months of data, so any comparison of 2022 with a full year must be read with care (see Limitations).
 
-![Revenue by Year chart](images/media/image3.png)
+![Revenue by Year chart](https://github.com/ojigwejoyonyii/Adventureworks_sales_performance_analysis/blob/main/Image/Readme%20Image/image3.png)
 
-![Profit per Year chart](images/media/image4.png)
+![Profit per Year chart](https://github.com/ojigwejoyonyii/Adventureworks_sales_performance_analysis/blob/main/Image/Readme%20Image/image4.png)
 
 ## 10.2 Monthly Revenue Analysis
 
 Monthly revenue is shown on an area chart. Because 2022 stops at June, January–June have three years of data and July–December have two. Within-year patterns are therefore more reliable than month totals pooled across years.
 
-![Revenue by Month chart](images/media/image5.png)
+![Revenue by Month chart](https://github.com/ojigwejoyonyii/Adventureworks_sales_performance_analysis/blob/main/Image/Readme%20Image/image5.png)
 
 ## 10.3 Product Category and Subcategory Analysis
 
@@ -265,7 +265,7 @@ Revenue is compared by category and subcategory in a column chart that can be dr
 
 Within Bikes, Road Bikes earned $11.29M (45.3% of total revenue), Mountain Bikes $8.58M (34.4%) and Touring Bikes $3.77M (15.1%). The five best-selling individual products are all Mountain-200 variants, each earning between $1.17M and $1.24M.
 
-![Revenue by Product chart](images/media/image6.png)
+![Revenue by Product chart](https://github.com/ojigwejoyonyii/Adventureworks_sales_performance_analysis/blob/main/Image/Readme%20Image/image6.png)
 
 ## 10.4 Regional Analysis
 
@@ -284,13 +284,13 @@ Revenue is compared across the ten sales territories using a column chart and a 
 | Northeast (US) | $6,402     | 44.9%             | 0.03%                |
 | Central (US)   | $3,143     | 45.7%             | 0.01%                |
 
-![Revenue by Region chart](images/media/image7.png)
+![Revenue by Region chart](https://github.com/ojigwejoyonyii/Adventureworks_sales_performance_analysis/blob/main/Image/Readme%20Image/image7.png)
 
 ## 10.5 Customer Analysis
 
 A bar chart of top-performing customers ranks customers by revenue and year. Revenue is widely spread: the highest single customer, Jordan Turner, generated $15,571, well under 0.1% of total revenue, followed by Maurice Shan ($12,408), Janet Munoz ($12,015), Lisa Cai ($11,330) and Lacey Zheng ($11,086).
 
-![Top Performing Customers chart](images/media/image8.png)
+![Top Performing Customers chart](https://github.com/ojigwejoyonyii/Adventureworks_sales_performance_analysis/blob/main/Image/Readme%20Image/image8.png)
 
 ## 10.6 Product Returns Analysis
 
@@ -310,7 +310,7 @@ Accessories account for 61.8% of returned units mainly because they are sold in 
 
 Two tables on Page 2 show profit margin by year and the sequence Total Revenue, Previous Year Revenue and YoY Revenue Growth Rate. 2021 revenue grew 45.6% over 2020. 2022 shows −1.5% against 2021 because six months of 2022 are compared with a full 2021.
 
-![Profit Margin and Year-on-Year Growth tables](images/media/image9.png)
+![Profit Margin and Year-on-Year Growth tables](https://github.com/ojigwejoyonyii/Adventureworks_sales_performance_analysis/blob/main/Image/Readme%20Image/image9.png)
 
 ## 10.8 Order Type Analysis
 
@@ -328,7 +328,7 @@ A two-page interactive Power BI report (1920 × 1080) consolidates the findings.
 
 - **Slicers:** Year, Product Subcategory and Region.
 
-![Dashboard Page 1 - Sales Overview](images/media/image10.png)
+![Dashboard Page 1 - Sales Overview](https://github.com/ojigwejoyonyii/Adventureworks_sales_performance_analysis/blob/main/Image/Readme%20Image/image10.png)
 
 ## 11.2 Page 2 – Profitability, Growth and Returns
 
@@ -342,7 +342,7 @@ A two-page interactive Power BI report (1920 × 1080) consolidates the findings.
 
 - A navigation button links the two pages.
 
-![Dashboard Page 2 - Profitability, Growth and Returns](images/media/image11.png)
+![Dashboard Page 2 - Profitability, Growth and Returns](https://github.com/ojigwejoyonyii/Adventureworks_sales_performance_analysis/blob/main/Image/Readme%20Image/image11.png)
 
 The slicers filter every visual on their page through the model relationships, so users can answer questions that are not obvious from the static charts, for example the revenue of one subcategory in one region in one year.
 
